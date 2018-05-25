@@ -15,7 +15,7 @@ abstract class BookRepository : Observable(){ //ใช้อินเตอเ�
 
     fun sortBook(str:String){
         when(str.toLowerCase()){
-            "name" -> bookList.sortBy { book -> book.title }
+            "a-z" -> bookList.sortBy { book -> book.title }
             "year" -> bookList.sortBy { book -> book.publicationYear }
         }
         setChanged()
