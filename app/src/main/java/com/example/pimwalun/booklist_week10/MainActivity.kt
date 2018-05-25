@@ -28,11 +28,7 @@ class MainActivity : AppCompatActivity(), BookView {
         spinners = findViewById(R.id.spinner)
         textView = findViewById(R.id.textView)
 
-<<<<<<< HEAD
-        var spinner = arrayOf("Sort By a-z","Sort By Year")
-=======
         var spinner = arrayOf("Sort By A-Z","Sort By Year")
->>>>>>> cfdf9427e7316aa172fe02f2e81bc357cc7c43fc
         spinners.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,spinner)
         spinners.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(p0: AdapterView<*>?) {
