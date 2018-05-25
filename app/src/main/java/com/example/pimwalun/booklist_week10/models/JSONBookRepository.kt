@@ -12,16 +12,16 @@ class JSONBookRepository: BookRepository() {
 
     override fun loadAllBooks() {
         bookList.clear()
-        val book = JSONBookLoader()
-        book.execute()
+        val task = JSONBookLoader()
+        task.execute()
     }
 
-    inner class JSONBookLoader:AsyncTask<String,String,String>(){
+    inner class JSONBookLoader: AsyncTask<String, String, String>(){
         override fun doInBackground(vararg p0: String?): String {
             return URL("https://theory.cpe.ku.ac.th/~jittat/courses/sw-spec/ebooks/books.json").readText()
         }
 
-        override fun onCancelled(result: String?) {
+        override fun onPostExecute(result: String?) {
             if(result!=null){
                 var data = JSONArray(result)
 
